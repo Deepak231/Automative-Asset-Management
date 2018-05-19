@@ -1,0 +1,168 @@
+cd C:\Program Files\MySQL\MySQL Server 5.7\bin
+
+mysql -u root -p 
+
+Enter Password: 12345
+
+use database1
+
+
+CAR_CUSTOMER:
+
+
+
+create table car_customer (
+username varchar(20),
+password varchar(20) not null,
+primary key(username));
+
+create table customer_profile (
+username varchar(10),
+fname varchar(10) ,
+mname varchar(10) ,
+lname varchar(10) ,
+email varchar(20) ,
+mobile bigint(10) ,
+dob date ,
+primary key(username),
+foreign key(username) references car_customer(username));
+
+
+DELIMITER $$
+
+create  trigger insert_on_custprof
+AFTER INSERT on car_customer
+for each row
+begin
+insert into customer_profile(username,fname,mname,lname,email,mobile,dob) 
+values(NEW.username,null,null,null,null,null,null);
+END $$
+
+create table store (
+car_id varchar(20),
+car_name varchar(20),
+price int,
+primary key(car_id));
+
+insert into store values('1234','BMW','2500000');
+insert into store values('1235','Audi','2500000');
+insert into store values('1236','BMW','2500000');
+insert into store values('1237','Swift','500000');
+insert into store values('1238','Phantom','3000000');
+insert into store values('1239','Nano','100000');
+insert into store values('1240','Nano','100000');
+insert into store values('1241','Nano','100000');
+insert into store values('1242','Ferrari','5000000');
+
+create table inventory (
+username varchar(10),
+car_id varchar(20),
+car_name varchar(20),
+price int,
+primary key(username,car_id),
+foreign key(username) references car_customer(username),
+foreign key(car_id) references store(car_id));
+
+						
+
+BANKER:
+
+
+
+create table banker (
+username varchar(20),
+password varchar(20) not null,
+primary key(username));
+
+create table banker_profile (
+username varchar(10),
+fname varchar(10) ,
+mname varchar(10) ,
+lname varchar(10) ,
+email varchar(20) ,
+mobile bigint(10) ,
+dob date ,
+primary key(username),
+foreign key(username) references banker(username));
+
+DELIMITER $$
+
+create trigger insert_on_bankprof
+AFTER INSERT on banker
+for each row
+begin
+insert into banker_profile(username,fname,mname,lname,email,mobile,dob) 
+values(NEW.username,null,null,null,null,null,null);
+END $$
+
+
+
+
+SALES_PERSON :
+
+
+
+
+
+create table sales_person (
+username varchar(20),
+password varchar(20) not null,
+primary key(username));
+
+create table salesper_profile (
+username varchar(10),
+fname varchar(10) ,
+mname varchar(10) ,
+lname varchar(10) ,
+email varchar(20) ,
+mobile bigint(10) ,
+dob date ,
+primary key(username),
+foreign key(username) references sales_person(username));
+
+DELIMITER $$
+
+create trigger insert_on_salesprof
+AFTER INSERT on sales_person
+for each row
+begin
+insert into salesper_profile(username,fname,mname,lname,email,mobile,dob) 
+values(NEW.username,null,null,null,null,null,null);
+END $$
+
+
+
+LOAN :
+
+create table loan(
+c_username varchar(10),
+s_username varchar(10),
+b_username varchar(10),
+loan_amt int,
+primary key(c_username),
+foreign key(c_username) references car_customer(username),
+foreign key(s_username) references sales_person(username),
+foreign key(b_username) references banker(username));
+
+create table loan_send (
+c_username varchar(10),
+b_username varchar(10),
+primary key(c_username),
+foreign key(c_username) references loan(c_username),
+foreign key(b_username) references loan(b_username));
+
+
+DELIMITER $$
+
+create trigger insert_loan_send
+AFTER UPDATE on loan
+for each row
+begin
+insert into loan_send(c_username,b_username) 
+values(NEW.c_username,NEW.b_username);
+END $$
+
+
+
+
+

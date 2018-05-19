@@ -1,0 +1,15 @@
+E:\my prg\Projects\Automative Asset Management\Automative Asset Management\bin\Debug\Automative Asset Management.exe.config
+E:\my prg\Projects\Automative Asset Management\Automative Asset Management\bin\Debug\Automative Asset Management.exe
+E:\my prg\Projects\Automative Asset Management\Automative Asset Management\bin\Debug\Automative Asset Management.pdb
+E:\my prg\Projects\Automative Asset Management\Automative Asset Management\obj\Debug\Automative Asset Management.csprojResolveAssemblyReference.cache
+E:\my prg\Projects\Automative Asset Management\Automative Asset Management\obj\Debug\Automative_Asset_Management.Form1.resources
+E:\my prg\Projects\Automative Asset Management\Automative Asset Management\obj\Debug\Automative_Asset_Management.Properties.Resources.resources
+E:\my prg\Projects\Automative Asset Management\Automative Asset Management\obj\Debug\Automative Asset Management.csproj.GenerateResource.Cache
+E:\my prg\Projects\Automative Asset Management\Automative Asset Management\obj\Debug\Automative Asset Management.exe
+E:\my prg\Projects\Automative Asset Management\Automative Asset Management\obj\Debug\Automative Asset Management.pdb
+E:\my prg\Projects\Automative Asset Management\Automative Asset Management\obj\Debug\Automative_Asset_Management.Form2.resources
+E:\my prg\Projects\Automative Asset Management\Automative Asset Management\obj\Debug\Automative_Asset_Management.Form4.resources
+E:\my prg\Projects\Automative Asset Management\Automative Asset Management\obj\Debug\Automative_Asset_Management.Form5.resources
+E:\my prg\Projects\Automative Asset Management\Automative Asset Management\obj\Debug\Automative_Asset_Management.Form6.resources
+E:\my prg\Projects\Automative Asset Management\Automative Asset Management\obj\Debug\Automative_Asset_Management.Form3.resources
+E:\my prg\Projects\Automative Asset Management\Automative Asset Management\obj\Debug\Automative_Asset_Management.Form7.resources
